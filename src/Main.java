@@ -33,6 +33,11 @@ public class Main {
             }
             System.out.println("결과: " + result);
 
+            /* 위 요구사항에 맞게 구현 */
+            if (i > 9) {
+                i = 0;
+            }
+
             intArray[i++] = result;
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
