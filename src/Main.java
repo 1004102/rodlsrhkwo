@@ -28,11 +28,19 @@ public class Main {
 
             int result = 0;
             /* 제어문을 활용하여 위 요구사항을 만족할 수 있게 구현합니다.*/
-            switch (ch) {
-                case '+' -> result = n1 + n2;
-                case '-' -> result = n1 - n2;
-                case '*' -> result = n1 * n2;
-                case '/' -> result = n1 / n2;
+            try {
+                switch (ch) {
+                    case '+' -> result = n1 + n2;
+                    case '-' -> result = n1 - n2;
+                    case '*' -> result = n1 * n2;
+                    case '/' -> result = n1 / n2;
+                    default -> throw new ccException();
+                }
+            } catch(ArithmeticException e){
+                System.out.println(e.getMessage());
+
+            }catch(ccException e) {
+                System.out.println("사칙연산이 아닙니다.");
             }
             System.out.println("결과: " + result);
 
