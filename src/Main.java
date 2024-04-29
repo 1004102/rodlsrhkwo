@@ -1,14 +1,17 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+        /* 적합한 컬렉션 타입의 변수 선언 */
+
         /* 연산의 결과를 저장할 수 있도록 적합한 타입의 배열을 생성합니다. */
         /* 연산의 결과가 저장된 배열의 마지막 index를 저장하는 변수를 선언 */
         Scanner sc = new Scanner(System.in);
-        int[] intArray = new int[10];
-        int i = 0;
+        List<Integer> intList =new ArrayList<>();
 
         while (true) {
 
@@ -33,12 +36,14 @@ public class Main {
             }
             System.out.println("결과: " + result);
 
-            /* 위 요구사항에 맞게 구현 */
-            if (i > 9) {
-                i = 0;
-            }
+            intList.add(result);
 
-            intArray[i++] = result;
+            /* 배열에서 컬렉션으로 변경됨으로써 변경해야하는 부분 구현 */
+            System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
+            /* 위 요구사항에 맞게 구현 */
+            if (sc.nextLine().equals("remove")) {
+                intList.removeFirst();
+            }
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             /* exit을 입력 받으면 반복 종료 */
