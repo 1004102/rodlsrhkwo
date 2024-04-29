@@ -15,6 +15,15 @@ public class Main {
         System.out.println("사칙연산 기호를 입력하세요: ");
         // 사칙연산 기호를 적합한 타입으로 선언한 변수에 저장합니다.
         char ch = sc.nextLine().charAt(0);
-        //g_G
+
+        int result = 0;
+        /* 제어문을 활용하여 위 요구사항을 만족할 수 있게 구현합니다.*/
+        switch (ch) {
+            case '+' -> result = n1 + n2;
+            case '-' -> result = n1 - n2;
+            case '*' -> result = n1 * n2;
+            case '/' -> result = n1 / n2;
+        }
+        System.out.println("결과: " + result);
     }
 }
