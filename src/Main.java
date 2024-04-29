@@ -11,7 +11,8 @@ public class Main {
         /* 연산의 결과를 저장할 수 있도록 적합한 타입의 배열을 생성합니다. */
         /* 연산의 결과가 저장된 배열의 마지막 index를 저장하는 변수를 선언 */
         Scanner sc = new Scanner(System.in);
-        List<Integer> intList =new ArrayList<>();
+
+        Calculator cal = new Calculator();
 
         while (true) {
 
@@ -28,35 +29,22 @@ public class Main {
 
             int result = 0;
             /* 제어문을 활용하여 위 요구사항을 만족할 수 있게 구현합니다.*/
-            try {
-                switch (ch) {
-                    case '+' -> result = n1 + n2;
-                    case '-' -> result = n1 - n2;
-                    case '*' -> result = n1 * n2;
-                    case '/' -> result = n1 / n2;
-                    default -> throw new ccException();
-                }
-            } catch(ArithmeticException e){
-                System.out.println(e.getMessage());
 
-            }catch(ccException e) {
-                System.out.println("사칙연산이 아닙니다.");
-            }
+            result = cal.calculator(n1, n2, ch);
+
             System.out.println("결과: " + result);
-
-            intList.add(result);
 
             /* 배열에서 컬렉션으로 변경됨으로써 변경해야하는 부분 구현 */
             System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
             /* 위 요구사항에 맞게 구현 */
             if (sc.nextLine().equals("remove")) {
-                intList.removeFirst();
+                cal.intList.removeFirst();
             }
 
             System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
             /* 위 요구사항에 맞게 구현 */
             if (sc.nextLine().equals("inquiry"));
-            for (Integer i : intList) {
+            for (Integer i : cal.intList) {
                 System.out.println("결과: " + i);
             }
 
