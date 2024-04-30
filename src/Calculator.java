@@ -3,7 +3,16 @@ import java.util.List;
 
 public class Calculator {
     /* 연산 결과를 저장하는 컬렉션 타입 필드 선언 및 생성 */
-    List<Integer> intList = new ArrayList<>();
+    private List<Integer> intList = new ArrayList<>();
+
+    public List<Integer> getIntList() {
+        return intList;
+    }
+
+    public void setIntList(List<Integer> intList) {
+        this.intList = intList;
+    }
+
     public int calculator(int num1, int num2, char ch) {
 
         int result = 0;
