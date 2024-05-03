@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator {
-    /* 연산 결과를 저장하는 컬렉션 타입 필드 선언 및 생성 */
     private List<Integer> intList = new ArrayList<>();
 
     public List<Integer> getIntList() {
